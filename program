@@ -1,0 +1,21 @@
+# DIN A4
+    
+import numpy as np
+
+print("DIN A Papierformate:")
+
+A0 = 1.0 # Startflaeche = 1 qm
+
+for i in range(0, 6): # von 0 bis 5
+    A = A0 / (2 ** i)
+    a = A**0.5 * 2**0.25
+    b = A**0.5 * 2**-0.25
+    A = a * b
+    d = np.sqrt(a**2 + b**2)
+    print ("A" + (str(i)))
+    print ("Flaeche   = {:03.4f} qm".format(A))
+    print ("Hoehe     = {:03.2f} cm".format(a * 100))
+    print ("Breite    = {:03.2f} cm".format(b * 100))
+    print ("Diagonale = {:03.2f} cm".format(d * 100))
+    print ("          = {:03.2f} Zoll".format(d * 100 /2.54))
+    print ("")
